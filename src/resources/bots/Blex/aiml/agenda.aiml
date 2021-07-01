@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+	<!-- agenda artefacto -->
+
+	<category>
+		<pattern>^ agenda que muestre * pendientes</pattern>
+		<template>Agenda: muestra los eventos pendientes</template>
+	</category>
+
+	<category>
+		<pattern>agenda muestra * pendientes</pattern>
+		<template>Agenda: muestra los eventos pendientes</template>
+	</category>
+
+	<category>
+		<pattern>^ agenda que anhada el evento *</pattern>
+		<template>Agenda: anhade <star index="2"/></template>
+	</category>
+
+	<category>
+		<pattern>agenda anhade el evento *</pattern>
+		<template>Agenda: anhade <star/></template>
+	</category>
+
+	<category>
+		<pattern>agenda anhade *</pattern>
+		<template>Agenda: anhade <star/></template>
+	</category>
+
+	<category>
+		  <pattern>agenda programa * para dentro de *</pattern>
+			<template>Agenda: programa <star/> para dentro de <star index="2"/></template>
+	</category>
+
+	<category>
+  <pattern>cuenta hasta <set>numero</set></pattern>
+  <template>
+    <think><set name="numero">0</set></think>
+    <condition name="numero">
+      <li><value><star/></value></li>
+      <li>
+        <set name="numero">
+          <map><name>sucesor</name><get name="numero"/></map>
+        </set>
+        <loop/>
+      </li>
+    </condition>
+  </template>
+  </category>
+
+  <category>
+  <pattern>muestra * pilotos *</pattern>
+  <template>
+    <think><set name="piloto">0</set></think>
+    <condition name="piloto">
+      <li value="russell"></li>
+      <li>
+        <set name="piloto">
+          <map><name>pilotosuc</name><get name="piloto"/></map>
+        </set>
+        <loop/>
+      </li>
+    </condition>
+  </template>
+  </category>
+
+	<!-- Regla para traducir cosas-->
+
+
+	<category>
+		<pattern> traducir a * la frase * </pattern>
+		<template>
+			La frase traducida es <translate> <to><map name="idioma"><star/></map></to> <msg><star index="2"/></msg> </translate>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ la frase * en * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce al * la frase * </pattern>
+		<template>
+			<srai>traducir a <star index="2"/> la frase <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce * al * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce al * </pattern>
+		<template> te agradeceria que me lo indicases de la siguiente forma: "traduce _ al _" </template>
+	</category>
+
+	<category>
+		<pattern>^ como se dice * en * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ en * como se dice *</pattern>
+		<template>
+			<srai>traducir a <star index="2"/> la frase <star index="3"/></srai>
+		</template>
+	</category>
+
+	<!-- Regla para escribir y crear archivos-->
+
+	<category>
+		<pattern>escribe * en el fichero *</pattern>
+		<template>
+			lo he escrito en el fichero <addtxt> <txt><star/></txt> <file><star index="2"/></file> </addtxt>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ guarda * en el fichero *</pattern>
+		<template>
+			<srai>escribe <star index="2"/> en el fichero <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade * al fichero *</pattern>
+		<template>
+			<srai>escribe <star index="2"/> en el fichero <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ escribe * en el fichero *</pattern>
+		<template>
+			<srai>escribe <star index="2"/> en el fichero <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^  en el fichero * escribe *</pattern>
+		<template>
+			<srai>escribe <star index="3"/> en el fichero <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^  en el fichero * anhade *</pattern>
+		<template>
+			<srai>escribe <star index="3"/> en el fichero <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^  en el fichero * guarda *</pattern>
+		<template>
+			<srai>escribe <star index="3"/> en el fichero <star index="2"/></srai>
+		</template>
+	</category>
+	<!-- Regla para gestionar personas-->
+
+	<category>
+		<pattern>anhadir persona *</pattern>
+		<template>
+			anhadi a <star/> a la agenda de personas puedo asociarle un correo y un telefono <addset> <new><star/></new> personas </addset>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade a * a personas</pattern>
+		<template>
+			<srai>anhadir persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ incluye a * en la agenda de personas</pattern>
+		<template>
+			<srai>anhadir persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ guarda el nombre de *</pattern>
+		<template>
+			<srai>anhadir persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ guarda el nombre *</pattern>
+		<template>
+			<srai>anhadir persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<!-- regla telefonos-->
+
+	<category>
+		<pattern>asociar tlf * a <set>personas</set></pattern>
+		<template>
+			el telefono <star/> se asocia a <star index="2"/> <addmap> <new><star index="2"/>:<star/></new> telefonos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el telefono de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar tlf <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el telefono *</pattern>
+		<template>
+			<srai>asociar tlf <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<!-- regla correos-->
+
+	<category>
+		<pattern>asociar correo * a <set>personas</set></pattern>
+		<template>
+			el correo <star/> se asocia a <star index="2"/> <addmap> <new><star index="2"/>:<star/></new> correos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar correo <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar correo <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar email <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar email <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar mail <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar mail <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<!-- regla telefonos-->
+
+
+	<category>
+		<pattern>mostrar persona <set>personas</set></pattern>
+		<template>
+			<star/> tiene asociado el telefono <map name="telefonos"><star/></map> y el correo <map name="correos"><star/></map>
+		</template>
+	</category>
+
+	<category>
+		<pattern>mostrar persona *</pattern>
+		<template>
+			<star/> aun no se ha guardado en la agenda
+		</template>
+	</category>
+
+	<category>
+			<pattern>muestra la informacion de *</pattern>
+		  <template><srai>mostrar persona <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ muestrame informacion de * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ muestra a la persona * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ datos de la persona * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+	<pattern>^ Envia ^ mensaje * a <set>personas</set> con asunto * </pattern>
+	<template> Envia <mail> <subject> <star index="5"/> </subject> <to><map name="correos"><star index="4"/></map></to> <msg> <star index="3"/> </msg></mail></template>
+	</category>
+
+	<category>
+		  <pattern>^ Envia ^ mensaje * a * con asunto * </pattern>
+			<template><star index="4"/> no esta anhadida a contactos</template>
+	</category>
+
+
+	<!-- Esta es la regla para gestionar las tareas-->
+
+	<category>
+		<pattern>anhadir tarea *</pattern>
+		<template>
+			He anhadido la tarea <set name="EventoActual"><star/></set> a la lista de eventos puedes proporcionar una descripcion mediante 'descripcion: '<addset> <new><star/></new> eventos </addset>
+		</template>
+	</category>
+
+	<category>
+		<pattern>descripcion: *</pattern>
+		<that>He anhadido la tarea _ a la lista de eventos debes proporcionar una descripcion _ </that>
+		<template>
+			He anhadido la <star/> como descripcion de la tarea <get name="EventoActual"/> puedes proporcionar que dia se realiza mediante 'dia: '<addmap> <new><get name="EventoActual"/>:<star/></new> descripcionEventos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>dia: *</pattern>
+		<that>_ como descripcion de la tarea _</that>
+		<template>
+			He anhadido <star/> como dia de realizacion de la tarea <get name="EventoActual"/> puedes proporcionar la hora de inicio mediante 'hora: '<addmap> <new><get name="EventoActual"/>:<star/></new> fechaEventos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hora: *</pattern>
+		<that>_ como dia de realizacion de la tarea _</that>
+		<template>
+			He establecido <star/> como hora de inicio de la tarea <get name="EventoActual"/>, la tarea se ha guardado con todos los datos necesarios <addmap> <new><get name="EventoActual"/>:<star/></new> horaEventos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>muestra la informacion de la tarea <set>eventos</set></pattern>
+		<template>
+			La tarea <star/> tiene la siguiente descripcion: <map name="descripcionEventos"><star/></map>, se realizara el dia <map name="fechaEventos"><star/></map> a la hora: <map name="horaEventos"><star/></map>.
+		</template>
+	</category>
+
+	<category>
+		<pattern>muestra la informacion de la tarea *</pattern>
+		<template>
+			No existe la tarea <star/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhade la tarea * para el dia *</pattern>
+		<template>
+			He anhadido la tarea <set name="EventoActual"><star/></set> ahora debes indicarme el dia de nuevo por favor mediante 'dia: ' <addset> <new><star/></new> eventos </addset>
+		</template>
+	</category>
+
+	<category>
+		<pattern>dia: *</pattern>
+		<that>* ahora debes indicarme el dia de nuevo *</that>
+		<template>
+			<addmap> <new><get name="EventoActual"/>:<star/></new> fechaEventos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhadir la tarea *</pattern>
+		<template>
+			<srai>anhadir tarea <star/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhade la tarea *</pattern>
+		<template>
+			<srai>anhadir tarea <star/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhade la tarea * para el *</pattern>
+		<template>
+			<srai>anhade la tarea <star/> para el dia <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhade * para el *</pattern>
+		<template>
+			<srai>anhade la tarea <star/> para el dia <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>anhade la tarea * para las *</pattern>
+		<template>
+			He anhadido la tarea <set name="EventoActual"><star/></set> pero debes indicar la hora de nuevo por favor mediante 'hora: ' <addset> <new><star/></new> eventos </addset>
+		</template>
+	</category>
+
+	<category>
+		<pattern>hora: *</pattern>
+		<that>He anhadido la tarea * pero debes indicar la hora de nuevo</that>
+		<template>
+			He asociado el dia <star/> a la tarea <get name="EventoActual"/> <addmap> <new><get name="EventoActual"/>:<get name="HoraActual"/></new> horaEventos </addmap>
+		</template>
+	</category>
+
+</aiml>

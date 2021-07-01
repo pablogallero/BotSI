@@ -1,0 +1,30 @@
+programacion I:pi
+fundamentos matematicos para la informatica:fmi
+analisis matematico:am
+sistemas digitales:sd
+fundamentos eticos y juridicos de las TIC:fej
+administracion de la tecnologia y la empresa:ate
+algoritmos y estructuras de datos I:aedi
+programacion II:pii
+algebra lineal:al
+arquitectura de computadoras I:aci
+algoritmos y estructuras de datos II:aedii
+arquitecturas de computadoras II:acii
+ingenieria del software I:isi
+estadistica:est
+sistemas operativos I:soi
+arquitecturas paralelas:ap
+bases de datos I:bdi
+ingenieria del software II:isii
+redes de computadoras I:rci
+sistemas operativos II:soii
+bases de datos II:bdii
+centros de datos:cda
+interfaces de usuario:iu
+logica para la computacion:lc
+redes de computadoras II:rcii
+concurrencia y distribucion I:cdi
+direccion y gestion de proyectos:dgp
+hardware de aplicacion especifica:hae
+sistemas inteligentes:si
+teoria de automatas y lenguajes formales:talf

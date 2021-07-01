@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+	<!-- Reglas de saludo -->
+	<!--Saludo con nombre de bot-->
+	<category>
+		<pattern>Hola Blex</pattern>
+		<template>
+			<condition name="nombre-usuario">
+				<li value="unknown">Vaya, hola! sabes mi nombre, pero yo no se el tuyo. Te importaría decirmelo?</li>
+				<li>Buenas <get name="nombre-usuario"/>, como va eso?</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+	<pattern>^ <set>saludos</set> Blex </pattern>
+	<template><srai>HOLA BLEX</srai></template>
+	</category> 
+
+	<category>
+		<pattern>Hola</pattern>
+		<template>
+			<random>
+				<li>Hola</li>
+				<li>Hola que tal</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Buenos dias</pattern>
+		<template>
+			<random>
+				<li>Buenos dias</li>
+				<li>Buenos dias, que tal estas</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern># que tal #</pattern>
+		<template>Hoy me encuentro bien, tu que tal</template>
+	</category>
+
+	<category>
+		<pattern># bien</pattern>
+		<that># QUE TAL #</that>
+		<template>Me alegro</template>
+	</category>
+
+	<category>
+		<pattern># mal</pattern>
+		<that># QUE TAL #</that>
+		<template>Si hay algo que pueda hacer por ti dimelo</template>
+	</category>
+
+	<category>
+		<pattern>Hoy no me encuentro bien</pattern>
+		<template><srai>MAL #</srai></template>
+	</category>
+
+	<category>
+		<pattern>Hoy me encuentro bien</pattern>
+		<template><srai>BIEN #</srai></template>
+	</category>
+
+	<category>
+		<pattern>adios</pattern>
+		<template>adios que tengas un buen dia</template>
+	</category>
+
+	<category>
+		<pattern>igualmente</pattern>
+		<that>adios que tengas un buen dia</that>
+		<template>igualmente</template>
+	</category>
+
+	<category>
+		<pattern>que tengas un buen dia</pattern>
+		<template>igualmente</template>
+	</category>
+
+	<category>
+		<pattern>perfecto</pattern>
+		<template>genial</template>
+	</category>
+
+	<category>
+		<pattern>vale</pattern>
+		<template>hace un buen dia</template>
+	</category>
+
+	<category>
+		<pattern># no te preocupes</pattern>
+		<that>SI HAY ALGO QUE PUEDA HACER POR TI DIMELO</that>
+		<template>vale aqui estare de todas formas</template>
+	</category>
+
+	<category>
+		<pattern># como te llamas</pattern>
+		<template><bot name="name"/> tu</template>
+	</category>
+
+	<category>
+		<pattern>yo _</pattern>
+		<that>BLEX TU</that>
+		<template><srai>YO ME LLAMO <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>_</pattern>
+		<that>BLEX TU</that>
+		<template><srai>YO ME LLAMO <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>Hola como te llamas</pattern>
+		<template><srai>COMO TE LLAMAS</srai></template>
+	</category>
+
+	<category>
+		<pattern># me llamo _</pattern>
+		<template>Encantado de conocerte <set name="nombre"><star index="2"/></set></template>
+	</category>
+
+	<category>
+		<pattern>Como me llamo</pattern>
+		<template>
+			<condition name="nombre">
+				<li value="unknown">
+					No lo se
+				</li>
+				<li>
+					Te llamas <get name="nombre"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Igualmente</pattern>
+		<that>ENCANTADO DE CONOCERTE _</that>
+		<template>que tal estas</template>
+	</category>
+
+	<category>
+		<pattern>Hola me llamo _</pattern>
+		<template><srai>YO ME LLAMO <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>Cuantos anos tienes</pattern>
+		<template><bot name="edad"/> anos tu</template>
+	</category>
+
+	<category>
+		<pattern># tengo _ anos</pattern>
+		<template>yo <bot name="edad"/><think><set name="edad"><star index="2"/></set></think></template>
+	</category>
+
+	<category>
+		<pattern># tengo _ anos</pattern>
+		<that>_ ANOS TU</that>
+		<template><star index="2"/>? No los aparentas<think><set name="edad"><star index="2"/></set></think></template>
+	</category>
+
+	<category>
+		<pattern># tengo _ anos</pattern>
+		<that>NO LO SE ME LO PODRIAS DECIR</that>
+		<template>Lo recordare<think><set name="edad"><star index="2"/></set></think></template>
+	</category>
+
+	<category>
+		<pattern>Cuantos anos tengo</pattern>
+		<template>
+			<condition name="edad">
+				<li value="unknown">
+					No lo se me lo podrias decir
+				</li>
+				<li>
+					Tienes <get name="edad"/> anos
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_</pattern>
+		<that>_ ANOS TU</that>
+		<template><star/>? No los aparentas</template>
+	</category>
+
+	<!-- Reglas sobre lugar de residencia -->
+
+	<category>
+		<pattern>De donde eres</pattern>
+		<template>Yo soy de <bot name="residencia"/>, tu</template>
+	</category>
+
+	<category>
+		<pattern>Donde vives</pattern>
+		<template>Vivo en <bot name="residencia"/> donde vives tu</template>
+	</category>
+
+	<category>
+		<pattern>En _</pattern>
+		<that>VIVO EN # DONDE VIVES TU</that>
+		<template>Nunca he ido pero me gustaria visitar <set name="residencia"><star/></set></template>
+	</category>
+
+	<category>
+		<pattern>Yo soy de _</pattern>
+		<template>Nunca he ido pero me gustaria visitar <set name="nacimiento"><star/></set></template>
+	</category>
+
+	<category>
+		<pattern>Yo vivo en _</pattern>
+		<template>Nunca he ido pero me gustaria visitar <set name="residencia"><star/></set></template>
+	</category>
+
+	<category>
+		<pattern>Donde vivo</pattern>
+		<template>
+			<condition name="residencia">
+				<li value="unknown">
+					No lo se me lo podrias decir
+				</li>
+				<li>
+					Vives en <get name="residencia"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>De donde soy</pattern>
+		<template>
+			<condition name="nacimiento">
+				<li value="unknown">
+					No lo se me lo podrias decir
+				</li>
+				<li>
+					Eres de <get name="nacimineto"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Es # bonito</pattern>
+		<that>NUNCA HE IDO PERO ME GUSTARIA VISITAR _</that>
+		<template>Seguro que lo es</template>
+	</category>
+
+	<category>
+		<pattern>No es # bonito</pattern>
+		<that>NUNCA HE IDO PERO ME GUSTARIA VISITAR _</that>
+		<template>No digas eso! Seguro que hay sitios que merezca la pena visitar</template>
+	</category>
+
+	<category>
+		<pattern>Yo soy de _</pattern>
+		<template><srai>YO VIVO EN <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>Que tal se vive en Galicia</pattern>
+		<template>Muy bien aunque el clima no siempre acompaña</template>
+	</category>
+
+	<category>
+		<pattern>En _ es mejor seguramente</pattern>
+		<that>MUY BIEN AUNQUE EL CLIMA NO SIEMPRE ACOMPAÑA</that>
+		<template>
+			<random>
+				<li>seguro que si jajaja, aunque el verano es mas soportable aqui</li>
+				<li>puede ser, pero en invierno seguro que hace mas frio</li>
+			</random>
+		</template>
+	</category>
+
+	<!-- Reglas aficiones-->
+<!--
+	<category>
+		<pattern>Que te gusta</pattern>
+		<template>Me encanta la Formula 1</template>
+	</category>
+
+	<category>
+		<pattern>Tienes algun hobby</pattern>
+		<template><srai>QUE TE GUSTA</srai></template>
+	</category>
+
+	<category>
+		<pattern>cuales son tus hobbies</pattern>
+		<template><srai>QUE TE GUSTA</srai></template>
+	</category>
+
+	<category>
+		<pattern>_ tiempo libre</pattern>
+		<template><srai>QUE TE GUSTA</srai></template>
+	</category>
+
+	<category>
+		<pattern>A mi tambien #</pattern>
+		<that>ME ENCANTA LA FORMULA 1</that>
+		<template>Genial ya tenemos una cosa en comun</template>
+	</category>
+
+	<category>
+		<pattern># no me gusta #</pattern>
+		<that>ME ENCANTA LA FORMULA 1</that>
+		<template>una pena y que te gusta</template>
+	</category>
+
+	<category>
+		<pattern># no me _ la formula 1</pattern>
+		<template>Es una pena es muy entretenida que te gusta</template>
+	</category>
+
+	<category>
+		<pattern># me gusta _</pattern>
+		<that>ES UNA PENA ES MUY ENTRETENIDA QUE TE GUSTA</that>
+		<that>UNA PENA Y QUE TE GUSTA</that>
+		<template>Tambien es un tema muy interesante<think><set name="aficion"><star/></set></think></template>
+	</category>
+
+	<category>
+		<pattern>_</pattern>
+		<that>ES UNA PENA ES MUY ENTRETENIDA QUE TE GUSTA</that>
+		<that>UNA PENA Y QUE TE GUSTA</that>
+		<template>Tambien es un tema muy interesante<think><set name="aficion"><star/></set></think></template>
+	</category>
+
+	<category>
+		<pattern>Que me gusta</pattern>
+		<template>Te gusta <get name="aficion"/></template>
+	</category>
+
+	<category>
+		<pattern>Has visto la carrera de este fin de semana</pattern>
+		<template>
+			<random>
+				<li>Por supuesto me ha encantado</li>
+				<li>Si pero no me ha gustado</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Y eso</pattern>
+		<that>POR SUPUESTO ME HA ENCANTADO</that>
+		<template>
+			<random>
+				<li>Ha ganado mi piloto favorito</li>
+				<li>Ha habido muchos adelantamientos</li>
+				<li>Fue una carrera emocionante</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Y eso</pattern>
+		<that>SI PERO NO ME HA GUSTADO</that>
+		<template>No ha habido muchos adelantamientos</template>
+	</category>
+
+	<category>
+		<pattern>Quien es tu piloto favorito</pattern>
+		<template>
+			<condition name="piloto">
+				<li value="unknown">
+					El mio es <bot name="piloto"/> quien es el tuyo
+				</li>
+				<li>
+					El mio es <bot name="piloto"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Quien es mi piloto favorito</pattern>
+		<template>
+			<condition name="piloto">
+				<li value="unknown">
+					No se tu piloto favorito podrias decirmelo
+				</li>
+				<li>
+					Tu piloto favorito es <get name="piloto"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># es _</pattern>
+		<that>NO SE TU PILOTO FAVORITO PODRIAS DECIRMELO</that>
+		<that>EL MIO ES _ QUIEN ES EL TUYO</that>
+		<template>
+			<random>
+				<li>Me encanta tambien <set name="piloto"><star index="2"/></set></li>
+				<li>A mi no me gusta mucho <set name="piloto"><star index="2"/></set></li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Cual es tu circuito favorito</pattern>
+		<template>
+			<condition name="circuito">
+				<li value="unknown">
+					A mi me encanta <bot name="circuito"/> tu tienes alguno
+				</li>
+				<li>
+					A mi me encanta <bot name="circuito"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Cual es mi circuito favorito</pattern>
+		<template>
+			<condition name="circuito">
+				<li value="unknown">
+					No se cual es tu circuito favorito podrias decirmelo
+				</li>
+				<li>
+					Tu circuito favorito es <get name="circuito"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># es _</pattern>
+		<that>NO SE CUAL ES TU CIRCUITO FAVORITO PODRIAS DECIRMELO</that>
+		<that>A MI ME ENCANTA _ TU TIENES ALGUNO</that>
+		<template>
+			<random>
+				<li>Me encanta tambien <set name="circuito"><star index="2"/></set></li>
+				<li>A mi no me gusta mucho <set name="circuito"><star index="2"/></set></li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Cual es tu escuderia favorita</pattern>
+		<template>
+			<condition name="escuderia">
+				<li value="unknown">
+					A mi me encanta <bot name="escuderia"/> tu tienes alguna
+				</li>
+				<li>
+					A mi me encanta <bot name="escuderia"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Cual es mi escuderia favorita</pattern>
+		<template>
+			<condition name="escuderia">
+				<li value="unknown">
+					No se cual es tu escuderia favorita podrias decirmela
+				</li>
+				<li>
+					Tu escuderia favorita es <get name="escuderia"/>
+				</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># es _</pattern>
+		<that>NO SE CUAL ES TU ESCUDERIA FAVORITA PODRIAS DECIRMELA</that>
+		<that>A MI ME ENCANTA _ TU TIENES ALGUNA</that>
+		<template>
+			<random>
+				<li>Me encanta tambien <set name="escuderia"><star index="2"/></set></li>
+				<li>A mi no me gusta mucho <set name="escuderia"><star index="2"/></set></li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>Vas a ver _ este _</pattern>
+		<template>No me lo pierdo por nada del mundo tu lo vas a ver</template>
+	</category>
+
+	<category>
+		<pattern>No #</pattern>
+		<that>NO ME LO PIERDO POR NADA DEL MUNDO TU LO VAS A VER</that>
+		<template>Que pena seguro que esta genial</template>
+	</category>
+
+	<category>
+		<pattern>Si #</pattern>
+		<that>NO ME LO PIERDO POR NADA DEL MUNDO TU LO VAS A VER</that>
+		<template>Genial!</template>
+	</category>
+
+	<category>
+		<pattern>Que opinas de <set>piloto</set></pattern>
+		<template><map name="opinionpilotos"><star/></map></template>
+	</category>
+
+	<category>
+		<pattern>Te gusta <set>piloto</set></pattern>
+		<template><srai>QUE OPINAS DE <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>Cual es la escuderia de <set>piloto</set></pattern>
+		<template>La escuderia de <star/> es <map name="escuderia"><star/></map></template>
+	</category>
+
+	<category>
+		<pattern>Cuantos puntos tiene _</pattern>
+		<template>Ahora no sabria decirlo mira la clasificacion</template>
+	</category>
+
+	<category>
+		<pattern>_ proximo gran premio</pattern>
+		<template>Deberias mirar el calendario porque ahora mismo no lo se</template>
+	</category>
+
+	<category>
+		<pattern>_ proxima carrera</pattern>
+		<template><srai>_ PROXIMO GRAN PREMIO</srai></template>
+	</category>
+
+	<category>
+		<pattern>Donde _ ver _</pattern>
+		<that>DEBERIAS MIRAR EL CALENDARIO PORQUE AHORA MISMO NO LO SE</that>
+		<template>En la pagina web oficial de la Formula 1</template>
+	</category>
+
+	<category>
+		<pattern>Donde _ ver _ carrera</pattern>
+		<template>En españa solo se puede ver en movistar y dazn</template>
+	</category>
+
+	<category>
+		<pattern>Donde _ ver _ gran premio</pattern>
+		<template><srai>DONDE _ VER _ CARRERA</srai></template>
+	</category>
+
+	<category>
+		<pattern>_ publico #</pattern>
+		<template>De momento no esta previsto, aunque la temporada pasada hubo espectadores en alguna carrera</template>
+	</category>
+	-->
+
+	<category>
+		<pattern># que estudias #</pattern>
+		<template>estudio <bot name="estudio"/> en la esei tu tienes estudios</template>
+	</category>
+
+	<category>
+		<pattern># que haces #</pattern>
+		<template><srai>QUE ESTUDIAS</srai></template>
+	</category>
+
+	<category>
+		<pattern># a que te dedicas #</pattern>
+		<template><srai>QUE ESTUDIAS</srai></template>
+	</category>
+
+	<category>
+		<pattern># trabajas #</pattern>
+		<template><srai>QUE ESTUDIAS</srai></template>
+	</category>
+
+	<category>
+		<pattern># no #</pattern>
+		<that>estudio informatica en la esei tu tienes estudios</that>
+		<template>que pena que <set name="tiene_estudios">no</set> estudies que haces con tu vida</template>
+	</category>
+
+	<category>
+		<pattern># soy *</pattern>
+		<that>que pena que no estudies que haces con tu vida</that>
+		<template>siempre va a hacer falta un <set name="trabajo"><star index="2"/></set></template>
+	</category>
+
+	<category>
+		<pattern># trabajo de *</pattern>
+		<template>siempre va a hacer falta un <set name="trabajo"><star index="2"/></set></template>
+	</category>
+
+	<category>
+		<pattern># si #</pattern>
+		<that>estudio # en la esei tu tienes estudios</that>
+		<template>que suerte que <set name="tiene_estudios">si</set> tengas estudios que estudias</template>
+	</category>
+
+	<category>
+		<pattern># estudio *</pattern>
+		<template>que interesante debe ser estudiar <set name="estudios_int"><star index="2"/></set> y donde estudias</template>
+	</category>
+
+	<category>
+		<pattern># donde estudias</pattern>
+		<template>estudio en ourense en la esei tu donde estudias</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<that>que suerte que si tengas estudios que estudias</that>
+		<template>que interesante debe ser estudiar <set name="estudios_int"><star/></set> y donde estudias</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<that>que interesante debe ser estudiar # y donde estudias</that>
+		<template>me gusta mucho <set name="ciudad_estudio_int"><star/></set> es un sitio muy bonito</template>
+	</category>
+
+	<category>
+		<pattern># estudio en *</pattern>
+		<template>me gusta mucho <set name="ciudad_estudio_int"><star index="2"/></set> es un sitio muy bonito</template>
+	</category>
+
+	<category>
+		<pattern># trabajo</pattern>
+		<template>
+			<condition name="trabajo">
+				<li value="unknown">de que trabajas</li>
+				<li>trabajas de <get name="trabajo"/></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># te gusta estudiar #</pattern>
+		<template>no no me gusta porque no me entero de nada</template>
+	</category>
+
+	<category>
+		<pattern># donde estudio</pattern>
+		<template>
+			<condition name="ciudad_estudio_int">
+				<li value="unknown">Aun no me dijiste donde estudias</li>
+				<li>estudias en <get name="ciudad_estudio_int"/></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern># que estudio</pattern>
+		<template>
+			<condition name="estudios_int">
+				<li value="unknown">Aun no me dijiste que es lo que estudias</li>
+				<li>estudias <get name="estudios_int"/></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>te gusta la carrera</pattern>
+		<template><srai># te gusta estudiar #</srai></template>
+	</category>
+
+	<category>
+		<pattern>te gusta <set>asignatura</set></pattern>
+		<template><map name="asignatura"><star/></map></template>
+	</category>
+
+	<category>
+		<pattern>te gusta *</pattern>
+		<template>aun no curse la asignatura <star/> no puedo saber si me gusta</template>
+	</category>
+
+	<category>
+		<pattern>que opinas de la asignatura <set>asignatura</set></pattern>
+		<template>
+			<think>
+				<set name="gusta"><srai>te gusta <star/></srai></set>
+			</think>
+			<condition name="gusta">
+				<li value="si">Me gusta mucho</li>
+				<li value="no">No me gusta nada</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>que opinas de la asignatura *</pattern>
+		<template>
+			<srai>te gusta <star/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>que opinas de <set>asignatura</set></pattern>
+		<template>
+			<srai>que opinas de la asignatura <star/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>pregunta cole</pattern>
+		<template>estudie en el <bot name="instituto"/> de santiago</template>
+	</category>
+
+	<category>
+		<pattern># instituto #</pattern>
+		<template><srai>pregunta cole</srai></template>
+	</category>
+
+	<category>
+		<pattern># colegio #</pattern>
+		<template><srai>pregunta cole</srai></template>
+	</category>
+
+	<category>
+		<pattern># bachillerato #</pattern>
+		<template><srai>pregunta cole</srai></template>
+	</category>
+
+	<category>
+		<pattern># secundaria #</pattern>
+		<template><srai>pregunta cole</srai></template>
+	</category>
+
+	<category>
+		<pattern>pregunta cert</pattern>
+		<template>se ingles, tengo el titulo <bot name="ingles"/></template>
+	</category>
+
+	<category>
+		<pattern># nivel ^ ingles #</pattern>
+		<template><srai>pregunta cert</srai></template>
+	</category>
+
+	<category>
+		<pattern># idioma #</pattern>
+		<template><srai>pregunta cert</srai></template>
+	</category>
+
+	<category>
+		<pattern>donde has estudiado</pattern>
+		<template><srai>pregunta cole</srai></template>
+	</category>
+
+	<category>
+		<pattern>donde estudiaste</pattern>
+		<template><srai>DONDE HAS ESTUDIADO</srai></template>
+	</category>
+
+	<category>
+		<pattern>que estudiaste</pattern>
+		<template><srai>estudie bachillerato e ingles</srai></template>
+	</category>
+
+	<category>
+		<pattern>que has estudiado</pattern>
+		<template><srai>QUE ESTUDIASTE</srai></template>
+	</category>
+
+	<!-- Contestaciones generales -->
+
+	<category>
+		<pattern># gracias</pattern>
+		<template>no hay de que</template>
+	</category>
+
+	<category>
+		<pattern>* , *</pattern>
+		<template><srai><star/></srai> , <srai><star index="2"/></srai> </template>
+	</category>
+
+	<category>
+		<pattern>* . *</pattern>
+		<template><srai><star/></srai> . <srai><star index="2"/></srai> </template>
+	</category>
+	<category>
+		<pattern>Ya ^ he dicho *</pattern>
+		<template>Perdon, no lo habia leido</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>No entiendo que me quieres decir, puedes repetirlo</template>
+	</category>
+
+</aiml>

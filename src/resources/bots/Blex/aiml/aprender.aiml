@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+  <category>
+    <pattern>^ dia ^</pattern>
+    <template>hoy es <date locale="es_ES" format="%A %d %B, %Y" /></template>
+  </category>
+
+  <category>
+    <pattern>recuerda *</pattern>
+    <template>
+      recordare <star/>
+      <learn>
+        <category>
+          <pattern>^ recuerdas ^</pattern>
+          <template>si recuerdo <eval><star/></eval></template>
+        </category>
+      </learn>
+    </template>
+  </category>
+
+  <category>
+    <pattern>aprende que *</pattern>
+    <template>
+      <srai>recuerda <star/></srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>sabias que *</pattern>
+    <template>
+      <srai>recuerda <star/></srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>te acuerdas de que *</pattern>
+    <template>
+      <srai>^ recuerdas ^ </srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>te acuerdas de que *</pattern>
+    <template>
+      <srai>^ recuerdas ^</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>^ mi jugador favorito es *</pattern>
+    <template>
+      recordare que tu jugador favorito es <star index="2"/>
+      <learn>
+        <category>
+          <pattern>^ cual es mi jugador favorito</pattern>
+          <template>tu jugador favorito es <eval><star index="2"/></eval></template>
+        </category>
+      </learn>
+    </template>
+  </category>
+
+  <category>
+  <pattern>^ dia ^</pattern>
+  <template>hoy es <date locale="es_ES" format="%A %d %B, %Y" /></template>
+  </category>
+
+  <category>
+    <pattern>^ mi asignatura favorita es *</pattern>
+    <template>
+      recordare que tu asignatura favorita es <star index="2"/>
+      <learn>
+        <category>
+          <pattern>^ cual es mi asignatura favorita</pattern>
+          <template>tu asignatura favorita es <eval><star index="2"/></eval></template>
+        </category>
+      </learn>
+    </template>
+  </category>
+
+
+  
+</aiml>

@@ -1,0 +1,17 @@
+File: Copyright
+Author: Gómez Rodríguez Daniel, Gallero Portela Pablo
+Last modified: 01/07/2021
+
+This AIML file is part of the Blex 0.0.4 chat bot knowledge base.
+
+The Blex brain is Copyright &copy; 2021 by SI_54.
+
+The Blex brain is released under the terms of the GNU Lesser General
+Public License, as published by the Free Software Foundation.
+
+This file is distributed WITHOUT ANY WARRANTY; without even the 
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  
+
+For more information see 
+
+

@@ -1,0 +1,37 @@
+programacion I
+fundamentos matematicos para la informatica
+analisis matematico
+sistemas digitales
+fundamentos eticos y juridicos de las TIC
+administracion de la tecnologia y la empresa
+algoritmos y estructuras de datos I
+programacion II
+algebra lineal
+arquitectura de computadoras I
+algoritmos y estructuras de datos II
+arquitecturas de computadoras II
+ingenieria del software I
+estadistica
+sistemas operativos I
+arquitecturas paralelas
+bases de datos I
+ingenieria del software II
+redes de computadoras I
+sistemas operativos II
+bases de datos II
+centros de datos
+interfaces de usuario
+logica para la computacion
+redes de computadoras II
+concurrencia y distribucion
+direccion y gestion de proyectos
+hardware de aplicacion especifica
+sistemas inteligentes
+teoria de automatas y lenguajes formales
+programacion
+ingenieria del software
+redes de computadoras
+bases de datos
+sistemas operativos
+algoritmos y estructura de datos
+arquitectura de computadoras

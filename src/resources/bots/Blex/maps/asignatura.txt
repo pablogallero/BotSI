@@ -1,0 +1,37 @@
+programacion I:no
+fundamentos matematicos para la informatica:si
+analisis matematico:no
+sistemas digitales:si
+fundamentos eticos y juridicos de las TIC:no
+administracion de la tecnologia y la empresa:si
+algoritmos y estructuras de datos I:no
+programacion II:si
+algebra lineal:no
+arquitectura de computadoras I:si
+algoritmos y estructuras de datos II:no
+arquitecturas de computadoras II:si
+ingenieria del software I:no
+estadistica:si
+sistemas operativos I:no
+arquitecturas paralelas:si
+bases de datos I:no
+ingenieria del software II:si
+redes de computadoras I:no
+sistemas operativos II:si
+bases de datos II:no
+centros de datos:si
+interfaces de usuario:no
+logica para la computacion:si
+redes de computadoras II:no
+concurrencia y distribucion:si
+direccion y gestion de proyectos:no
+hardware de aplicacion especifica:si
+sistemas inteligentes:no
+teoria de automatas y lenguajes formales:si
+programacion:no
+ingenieria del software:si
+redes de computadoras:no
+bases de datos:si
+sistemas operativos:no
+algoritmos y estructura de datos:si
+arquitectura de computadoras:no
