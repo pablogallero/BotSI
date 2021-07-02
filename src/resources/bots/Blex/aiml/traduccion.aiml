@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+<!-- Regla para traducir cosas-->
+
+	<category>
+		<pattern> traducir a * la frase * </pattern>
+		<template>
+			La frase traducida es <translate> <to><map name="idioma"><star/></map></to> <msg><star index="2"/></msg> </translate>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ la frase * en * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce al * la frase * </pattern>
+		<template>
+			<srai>traducir a <star index="2"/> la frase <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce * al * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ traduce al * </pattern>
+		<template> te agradeceria que me lo indicases de la siguiente forma: "traduce _ al _" </template>
+	</category>
+
+	<category>
+		<pattern>^ como se dice * en * </pattern>
+		<template>
+			<srai>traducir a <star index="3"/> la frase <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ en * como se dice *</pattern>
+		<template>
+			<srai>traducir a <star index="2"/> la frase <star index="3"/></srai>
+		</template>
+	</category>
+
+</aiml>
