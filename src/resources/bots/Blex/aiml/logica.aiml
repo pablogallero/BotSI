@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+  <pattern>cuenta hasta <set>numero</set></pattern>
+  <template>
+    <think><set name="numero">0</set></think>
+    <condition name="numero">
+      <li><value><star/></value></li>
+      <li>
+        <set name="numero">
+          <map><name>sucesor</name><get name="numero"/></map>
+        </set>
+        <loop/>
+      </li>
+    </condition>
+  </template>
+  </category>
+
+  <category>
+  <pattern>muestra * jugadores *</pattern>
+  <template>
+    <think><set name="jugador">0</set></think>
+    <condition name="jugador">
+      <li value="russell"></li>
+      <li>
+        <set name="jugador">
+          <map><name>jugadoresmap</name><get name="jugador"/></map>
+        </set>
+        <loop/>
+      </li>
+    </condition>
+  </template>
+  </category>
+  </aiml>

@@ -16,7 +16,8 @@ MAS prueba {
 
 	environment: jaca.CartagoEnvironment
 
-    agents: Blex agentArchClass jaca.CAgentArch;                                                                                                
-		
+	agents:
+        blex agentArchClass jaca.CAgentArch;
+
 }
 

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+<!-- regla telefonos-->
+
+	<category>
+		<pattern>asociar tlf * a <set>personas</set></pattern>
+		<template>
+			el telefono <star/> se asocia a <star index="2"/> <addmap> <new><star index="2"/>:<star/></new> telefonos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el telefono * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar tlf <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el telefono de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar tlf <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el telefono *</pattern>
+		<template>
+			<srai>asociar tlf <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<!-- regla correos-->
+
+	<category>
+		<pattern>asociar correo * a <set>personas</set></pattern>
+		<template>
+			el correo <star/> se asocia a <star index="2"/> <addmap> <new><star index="2"/>:<star/></new> correos </addmap>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar correo <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar correo <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar correo <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar email <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar email <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar email <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+		<pattern>^ anhade el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ asocia el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ pon el correo * a <set>personas</set></pattern>
+		<template>
+			<srai>asociar mail <star index="2"/> a <star index="3"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ el correo de <set>personas</set> es *</pattern>
+		<template>
+			<srai>asociar mail <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ <set>personas</set> tiene el correo *</pattern>
+		<template>
+			<srai>asociar mail <star index="3"/> a <star index="2"/></srai>
+		</template>
+	</category>
+
+	<!-- regla telefonos-->
+
+
+	<category>
+		<pattern>mostrar persona <set>personas</set></pattern>
+		<template>
+			<star/> tiene asociado el telefono <map name="telefonos"><star/></map> y el correo <map name="correos"><star/></map>
+		</template>
+	</category>
+
+	<category>
+		<pattern>mostrar persona *</pattern>
+		<template>
+			<star/> aun no se ha guardado en la agenda
+		</template>
+	</category>
+
+	<category>
+			<pattern>muestra la informacion de *</pattern>
+		  <template><srai>mostrar persona <star/></srai></template>
+	</category>
+
+	<category>
+		<pattern>^ muestrame informacion de * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ muestra a la persona * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>^ datos de la persona * </pattern>
+		<template>
+			<srai> mostrar persona <star index="2"/></srai>
+		</template>
+	</category>
+
+
+	<category>
+	<pattern>^ Envia ^ mensaje * a <set>personas</set> con asunto * </pattern>
+	<template> Envia <mail> <subject> <star index="5"/> </subject> <to><map name="correos"><star index="4"/></map></to> <msg> <star index="3"/> </msg></mail></template>
+	</category>
+
+	<category>
+		  <pattern>^ Envia ^ mensaje * a * con asunto * </pattern>
+			<template><star index="4"/> no esta anhadida a contactos</template>
+	</category>
+    </aiml>
