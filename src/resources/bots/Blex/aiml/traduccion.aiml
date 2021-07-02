@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aiml version="2.0">
 
-<!-- Regla para traducir cosas-->
+<!-- Reglas para realizar traduccion de una cadena de texto-->
 
 	<category>
 		<pattern> traducir a * la frase * </pattern>
