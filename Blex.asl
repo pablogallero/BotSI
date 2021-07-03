@@ -120,7 +120,7 @@ filter(Answer, creatingFile, [Route]):-
 	!setupTool("Blex",BotId).        
 	
 +!setupTool(Name, Id): true
-	<- 	makeArtifact(Name,"bot.Services",[Name],Id);
+	<- 	makeArtifact(Name,"bot.Servicios",[Name],Id);
 		.wait(1000);
 		focus(Id);
 		makeArtifact("guiChat","chat.ChatGUI",[],GUI);
