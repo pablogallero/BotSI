@@ -43,7 +43,7 @@ import org.alicebot.ab.utils.IOUtils;
 import org.json.*;
 import org.json.JSONArray;   
 
-public class Services extends Artifact {
+public class Servicios extends Artifact {
 	
     /** Called before the MAS execution with the args informed in .mas2j */
     private Logger logger = Logger.getLogger("prueba.mas2j."+Chat.class.getName());

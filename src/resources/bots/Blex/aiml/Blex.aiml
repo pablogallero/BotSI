@@ -6,9 +6,9 @@
 	<category>
 		<pattern>Hola Blex</pattern>
 		<template>
-			<condition name="nombre-usuario">
+			<condition name="nombre">
 				<li value="unknown">Vaya, hola! sabes mi nombre, pero yo no se el tuyo. Te importaría decirmelo?</li>
-				<li>Buenas <get name="nombre-usuario"/>, como va eso?</li>
+				<li>Buenas <get name="nombre"/>, como va eso?</li>
 			</condition>
 		</template>
 	</category>
@@ -73,7 +73,7 @@
 	<category>
 		<pattern>igualmente</pattern>
 		<that>adios que tengas un buen dia</that>
-		<template>igualmente</template>
+		<template>gracias!</template>
 	</category>
 
 	<category>

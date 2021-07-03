@@ -36,8 +36,6 @@
 			<srai>escribe <star index="3"/> en el fichero <star index="2"/></srai>
 		</template>
 	</category>
-<?xml version="1.0" encoding="UTF-8"?>
-<aiml version="2.0">
 
 	<category>
 		<pattern>^  en el fichero * anhade *</pattern>

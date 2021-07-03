@@ -34,9 +34,8 @@
 			<template>Agenda: programa <star/> para dentro de <star index="2"/></template>
 	</category>
 
-	<category>
 
-	<!-- Esta es la regla para gestionar las tareas-->
+	<!-- Reglas para gestionar las tareas-->
 
 	<category>
 		<pattern>anhadir tarea *</pattern>
