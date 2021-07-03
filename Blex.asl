@@ -135,7 +135,7 @@ filter(Answer, creatingFile, [Route]):-
 	chat(What).
 	
 +!say(Who,What) <- 
-	.println("??????????????????????????????????????????????????????????????????").
+	.println("?").
 	
 +say(What) <-
 	println("El Bot Master ha dicho: ", What);
@@ -149,17 +149,17 @@ filter(Answer, creatingFile, [Route]):-
 	.abolish(recibida(_)).
 
 +!showQuest(Who,Question) <-
-	.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	.println("----------------------------");
 	.println(Who," dice: ",Question);  
-	.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+	.println("----------------------------");
 	.println.
 
 +!showAnsw(Answer) : numAnswer(N) & bot(Bot) & interlocutor(Who)
-	<-	.println("==================================================================");
+	<-	.println("---------------------------------------------------");
 		.println;
 		.println(Bot, " contesta: ", Answer);
 		.println;
-		.println("==================================================================");
+		.println("---------------------------------------------------");
 		.wait(3000);
 		+contesta(N,Answer);  
 		.send(Who,achieve,say("Blex",Answer));
@@ -169,11 +169,11 @@ filter(Answer, creatingFile, [Route]):-
 		.println.
 		
 +!showAnsw(Answer) : numAnswer(N) & bot(Bot) 
-	<-	.println("==================================================================");
+	<-	.println("---------------------------------------------------");
 		.println;
 		.println(Bot, " contesta: ", Answer);
 		.println;
-		.println("==================================================================");
+		.println("---------------------------------------------------");
 		.wait(3000);
 		+contesta(N,Answer);
 		-+numAnswer(N+1);
@@ -244,6 +244,6 @@ filter(Answer, creatingFile, [Route]):-
 	<- 	
 		if (.substring("Agenda: ",Answer)){.send(agenda,achieve,say(Blex,Answer));}
 		else {
-		!showAnsw(Answer); 
+		!showAnsw(Answer);
 		+recibida(Answer);
 		}.
