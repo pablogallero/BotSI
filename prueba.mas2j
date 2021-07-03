@@ -18,6 +18,7 @@ MAS prueba {
 
 	agents:
         blex agentArchClass jaca.CAgentArch;
+        agenda agentArchClass jaca.CAgentArch;
 
 }
 
