@@ -123,8 +123,8 @@ filter(Answer, creatingFile, [Route]):-
 	<- 	makeArtifact(Name,"bot.Services",[Name],Id);
 		.wait(1000);
 		focus(Id);
-		//makeArtifact("guiChat","chat.ChatGUI",[],GUI);
-		//focus(GUI);
+		makeArtifact("guiChat","chat.ChatGUI",[],GUI);
+		focus(GUI);
 		.wait(200).
 
 +!say(Who,What) : numAnswer(N) <-
