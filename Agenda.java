@@ -141,7 +141,7 @@ public class Agenda extends GUIArtifact {
 				System.out.println("El fichero de texto ya estaba creado.");
 			} else {
 				archivo.createNewFile();              
-				System.out.println("Acabo de crear el fichero de texto");
+				System.out.println("Creado el fichero de texto");
 			}
 			bw = new BufferedWriter(new FileWriter(archivo,true));
 			bw.close();
@@ -247,9 +247,6 @@ public class Agenda extends GUIArtifact {
 		
 		public MyFrame(){
 
-			eventos.add("Incorpora la relacion entre pakistan y islamabad al mapa capital de inmediato");
-    		eventos.add("Incorpora la relacion entre madrid y teupai al mapa capital de inmediato");
-    		eventos.add("Incorpora la relacion entre galicia y santiago al mapa capital de inmediato");
     		java.util.Date fecha = new Date();
 			
 			setTitle("GUI AGENDA");
@@ -259,7 +256,6 @@ public class Agenda extends GUIArtifact {
 			contenedor.setLayout(new BorderLayout());
 
 			JPanel panel = new JPanel(new FlowLayout());
-			//JPanel panel2 = new JPanel();
 			setContentPane(contenedor);
 			
 			okButton = new JButton("ok");
@@ -287,11 +283,6 @@ public class Agenda extends GUIArtifact {
 			
 			text.setText("0");
 			text.setEditable(true);
-
-			/*panel.add(text);
-			panel.add(okButton);*/
-			/*panel.add(scroll, BorderLayout.SOUTH);
-			panel.add(textArea, BorderLayout.SOUTH);*/
 			contenedor.add(scroll, BorderLayout.CENTER);
 			contenedor.add(panel, BorderLayout.SOUTH);
 		}

@@ -5,7 +5,7 @@ import java.lang.*;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 
-public class Agenda41 extends Artifact {
+public class AgendaJava extends Artifact {
 	
 	private ArrayList<String> eventos;
 	private boolean avisado;
@@ -16,12 +16,8 @@ public class Agenda41 extends Artifact {
 		eventos = new ArrayList<>();
 		time = TimeUnit.SECONDS;
 		
-		//Definicion de eventos
-		eventos.add("anhadir la tarea talf");
-		eventos.add("recuerda que el gran premio de monaco es este fin de semana");
-		eventos.add("recuerda hacer la agenda de si");
-		eventos.add("muestra los pilotos del mundial de este a�o");
-		eventos.add("muestra la informacion de cesar");
+		//eventos predefinidos
+		eventos.add("recuerda que la final de la eurocopa es para la semana");
 	}
 	
 	@OPERATION void bucle() {

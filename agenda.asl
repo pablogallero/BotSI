@@ -5,7 +5,7 @@
 	
 +!setupTool(Name, Id): true
 	<- 	.wait(1000);
-		makeArtifact("agenda41","agenda.Agenda41",[],Id);
+		makeArtifact("agendaJava","agenda.AgendaJava",[],Id);
 		focus(Id);
 		while(true) {
 			.wait(10000);
@@ -18,17 +18,17 @@
 		elif (.substring("anhade",Answer)){anhadir(Answer);}.
 		
 +recordatorio(Tarea)
-	<-  .println("==================================================================");
+	<-  .println("-----------------------------------------------------------------");
 		.println(Tarea);
-		.println("==================================================================");
+		.println("--------------------------------------------------------------");
 		if (.substring("anhadir",Tarea) 
 			| .substring("muestra",Tarea)
 			| .substring("recuerda",Tarea)) {.send(fernandoSainz,achieve,say(agenda,Tarea))}
 		-recordatorio(Tarea).
 		
 +anhadida(Tarea)
-	<- 	.println("==================================================================");
+	<- 	.println("-----------------------------------------------------------------");
 		.print("Evento anhadido: ");
 		.print(Tarea);
-		.println("==================================================================");
+		.println("-----------------------------------------------------------------");
 		-anhadida(Tarea).
