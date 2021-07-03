@@ -23,7 +23,7 @@
 		.println("--------------------------------------------------------------");
 		if (.substring("anhadir",Tarea) 
 			| .substring("muestra",Tarea)
-			| .substring("recuerda",Tarea)) {.send(fernandoSainz,achieve,say(agenda,Tarea))}
+			| .substring("recuerda",Tarea)) {.send(blex,achieve,say(agenda,Tarea))}
 		-recordatorio(Tarea).
 		
 +anhadida(Tarea)
